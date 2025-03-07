@@ -1,4 +1,4 @@
-package it.volta.ts.kamaninandrii.api_service.service;
+package it.volta.ts.kamaninandrii.worker_service.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,8 +14,8 @@ public class KafkaProducerService {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendMessage(String topic, String message) {
-        logger.info("📤 [API] Отправка сообщения в Kafka -> Топик: {}, Сообщение: {}", topic, message);
-        kafkaTemplate.send(topic, message);
+    public void sendResponse(String message) {
+        logger.info("📤 [Worker] Отправка ответа в API -> Топик: response-topic, Сообщение: {}", message);
+        kafkaTemplate.send("response-topic", message);
     }
 }
