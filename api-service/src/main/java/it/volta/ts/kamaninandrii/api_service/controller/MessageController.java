@@ -16,6 +16,7 @@ public class MessageController {
     // Обновленный метод для отправки JSON-сообщений
     @PostMapping("/send")
     public String sendMessage(@RequestBody Message message) {
+
         producerService.sendMessage("worker-topic", message);
         return "Сообщение отправлено!";
     }

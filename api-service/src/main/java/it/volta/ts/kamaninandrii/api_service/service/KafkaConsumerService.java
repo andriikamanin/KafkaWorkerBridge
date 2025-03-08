@@ -13,6 +13,7 @@ public class KafkaConsumerService {
 
     @KafkaListener(topics = "response-topic", groupId = "api-group")
     public void listenResponse(String message) {
+
         logger.info("✅ [API] Получен ответ от Worker'а: {}", message);
     }
 }

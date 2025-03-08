@@ -39,4 +39,6 @@ public class KafkaConsumerService {
             logger.error("❌ [Worker] Ошибка при обработке сообщения: {}", message, e);
         }
     }
+
+
 }

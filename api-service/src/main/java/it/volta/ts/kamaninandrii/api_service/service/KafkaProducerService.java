@@ -16,6 +16,7 @@ public class KafkaProducerService {
     }
 
     public void sendMessage(String topic, Message message) {
+        logger.info("LOLOS");
         logger.info("📤 [API] Отправка сообщения в Kafka -> Топик: {}, Сообщение: {}", topic, message);
         kafkaTemplate.send(topic, message);
     }
